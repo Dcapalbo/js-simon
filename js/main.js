@@ -3,7 +3,7 @@ function randomNumbers(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
-//2. make variable for the random numbers
+//2. make some variables for the randomize numbers
 var min = 1;
 var max = 100;
 //3. make a cicle to create 5 randomize numbers for the utent
@@ -14,7 +14,18 @@ while (arrayNumbers.length < 5) {
     arrayNumbers.push(computerNumbers)
   }
 };
-console.log(computerNumbers);
+console.log(arrayNumbers);
 //4. An alert appears to show 5 numbers to the utent
-alert(computerNumbers);
-//5.
+alert(arrayNumbers);
+//5. make the utent number variable
+var utentNumber = parseInt(prompt("insert a number which you remember for the previous ones"));
+//6. after 30 seconds 5 prompt will appear on the screen asking for the 5 numbers which the utent had seen
+setTimeout(function(){
+  while (utentNumber.lenght < 5) {
+    if (utentNumber < min || utentNumber > max || isNaN(utentNumber)) {
+      alert("insert a valid number")
+    }
+  }
+},30000);
+
+function myFunction() { alert('Hello'); }
