@@ -17,15 +17,17 @@ while (arrayNumbers.length < 5) {
 console.log(arrayNumbers);
 //4. An alert appears to show 5 numbers to the utent
 alert(arrayNumbers);
-//5. make the utent number variable
-var utentNumber = parseInt(prompt("insert a number which you remember for the previous ones"));
-//6. after 30 seconds 5 prompt will appear on the screen asking for the 5 numbers which the utent had seen
-setTimeout(function(){
-  while (utentNumber.lenght < 5) {
-    if (utentNumber < min || utentNumber > max || isNaN(utentNumber)) {
-      alert("insert a valid number")
+// 5. make the utent number variable and an array with the numbers inside
+var arrayUtentNumbers = [];
+//6. 5 prompt will appear on the screen asking for the 5 numbers which the utent had seen
+  while (arrayUtentNumbers.length < 5) {
+    var utentNumber = parseInt(prompt("insert one of the 5 precedent numbers"));
+    if (utentNumber < 1 || utentNumber > 100) {
+      alert("insert a valid number");
+    } else if (arrayUtentNumbers.includes(utentNumber)) {
+      alert("number already inserted")
+    } else {
+      arrayUtentNumbers.push(utentNumber)
     }
-  }
-},30000);
-
-function myFunction() { alert('Hello'); }
+  };
+  console.log(arrayUtentNumbers);
